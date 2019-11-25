@@ -174,7 +174,8 @@
     "remove_one_item": "Remove one item",
     "add_one_item": "Add one item",
     "shipping_taxes_notification": "Shipping & taxes calculated at checkout",
-    "order_notes": "Leave a note with your order"
+    "order_notes": "Leave a note with your order",
+    "donation_label": "This holiday season, we are giving away a portion of our sales to your choice of the following non-profit organizations"
   },
   "blog": {
     "filtered_by": "Filtered By",
