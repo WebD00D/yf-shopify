@@ -1,0 +1,60 @@
+<div class="modal cart-link" data-js-class="FrameworkModal">
+  <a tabindex="0" class="toggle {% if settings.cart--type == 'modal' %}modal--link{% endif %}" href="{{ shop.url}}/cart">{{ 'cart.title' | t }}<span class="count">{% if cart.item_count > 0 %}({{ cart.item_count }}){% endif %}</span> </a>
+
+  <div class="fw--cart modal--content spacing--4" data-js-class="FrameworkCart">
+    <p class="notification--empty spacing--3">{{ 'cart.empty_html' | t }}</p>
+
+    <form action="/cart" method="post" novalidate="" class="">
+      <div class="content fw--blocks"></div>
+
+      <div class="spacer spacing--3y"></div>
+      <div class="fw--blocks">
+        <div class="width--large-6 text-align--center">
+          {% if settings.cart--show-note %}
+            <p class="text-align--center text-align--large-left">{{ 'cart.order_notes' | t }}</p>
+            <textarea name="note">{{ note }}</textarea>
+            <div class="spacer spacing--4y show--small-medium"></div>
+          {% endif %}
+        </div>
+
+        <div class="width--large-6">
+          <p class="text-align--center text-align--large-right">{{ 'cart.shipping_taxes_notification' | t}}</p>
+          <div class="spacer spacing--2y"></div>
+          
+          <div class="spacer spacing--2y"></div>
+              
+              <div class="text-align--center text-align--large-right checkout-checkboxes ">
+                
+                <div class="checkbox">
+                  
+                   <label>Please be aware that there may be shipping delays for certain styles. Refer to the product page at the time of purchase for the estimated ship time of your order</label>
+                </div> 
+                
+                 
+                 <div class="checkbox">
+                  
+                   <label>International orders may be subjected to local import duties and taxes. It is the responsibility of the recipient to be aware and pay for any associated fees to their local customs</label>
+                </div> 
+              </div>
+
+          <div class="fw--blocks spacing--3 compact--3x list text-align--center text-align--large-right">
+            <div><a class="continue-shopping text--underline text--uppercase" href="{{ shop.url }}/collections/all">{{ 'cart.continue' | t }}</a></div>
+            <div><button class="button checkout checkout-button-modal" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button></div>
+
+            {% if additional_checkout_buttons %}
+            {% comment %}
+              <br />
+              <div class="additional-checkout-buttons">
+                {{ content_for_additional_checkout_buttons }}
+              </div>{% endcomment %}
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
